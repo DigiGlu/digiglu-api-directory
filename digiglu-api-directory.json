@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/tmforum-apis/TMF634_ResourceCatalog/master/TMF634_Resource_Catalog_Management.admin.swagger-R17.0.0.json",
+    "key": "TMF634",
+    "title": "Resource Catalog Management"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/tmforum-apis/TMF662_EntityCatalog/master/EntityCatalog_Management.admin.swagger.json",
+    "key": "TMF662",
+    "title": "EntityCatalog Management"
+  }
+]
