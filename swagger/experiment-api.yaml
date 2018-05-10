@@ -1,0 +1,544 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Experiments API
+host: localhost:80
+basePath: /v1
+#
+schemes:
+  - http
+  - https
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /experiment:
+    x-swagger-router-controller: experiment
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new experiment
+      operationId: experimentCreate
+      parameters:
+        - name: experiment
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Experiment"
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/Experiment"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    get:
+      security:
+        - Bearer: []
+      description: Returns an array of experiments
+      operationId: experimentFind
+      parameters:
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+        - name: page
+          in: query
+          required: false
+          description: ''
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Experiment"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}:
+    x-swagger-router-controller: experiment
+    patch:
+      security:
+        - Bearer: []
+      description: Creates a new experiment
+      operationId: experimentUpdate
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: experiment
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Experiment"
+      responses:
+        "200":
+          description: Update successful
+          schema:
+            $ref: "#/definitions/Experiment"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    get:
+      security:
+        - Bearer: []
+      description: Returns one experiment
+      operationId: experimentGet
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/Experiment"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/bmcRef:
+    x-swagger-router-controller: bmcRef
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new BMC reference
+      operationId: bmcRefCreate
+      parameters:
+        - name: bmcRef
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/CanvasReference"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/CanvasReference"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/sicRef:
+    x-swagger-router-controller: sicRef
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new SIC reference
+      operationId: sicRefCreate
+      parameters:
+        - name: sicRef
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/CanvasReference"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/CanvasReference"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/hypothesis:
+    x-swagger-router-controller: hypothesis
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new business Hypothesis
+      operationId: hypoCreate
+      parameters:
+        - name: hypothesis
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Hypothesis"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/Hypothesis"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/hypothesis/{hypoid}:
+    x-swagger-router-controller: hypothesis
+    patch:
+      security:
+        - Bearer: []
+      description: Updates a business Hypothesis
+      operationId: hypoUpdate
+      parameters:
+        - name: hypothesis
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Hypothesis"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: hypoid
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Updated
+          schema:
+            $ref: "#/definitions/Hypothesis"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/growthModel:
+    x-swagger-router-controller: growthModel
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new growth Driver
+      operationId: driverCreate
+      parameters:
+        - name: driver
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/GrowthDriver"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/GrowthDriver"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+  /experiment/{id}/retroEvent:
+    x-swagger-router-controller: retroEvent
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new restospective event
+      operationId: retroCreate
+      parameters:
+        - name: retroEvent
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/RetrospectiveEvent"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/RetrospectiveEvent"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    get:
+      security:
+        - Bearer: []
+      description: Returns an array of retrospective events
+      operationId: retroFind
+      parameters:
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/RetrospectiveEvent"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/member:
+    x-swagger-router-controller: teamMember
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new team member
+      operationId: memberCreate
+      parameters:
+        - name: teamMember
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/TeamMember"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/TeamMember"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/TeamMember"
+    get:
+      security:
+        - Bearer: []
+      description: Returns an array of team members
+      operationId: memberFind
+      parameters:
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/TeamMember"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+definitions:
+  TeamMember:
+    properties:
+      id:
+        type: string
+      memberId:
+        type: string
+      name:
+        type: string
+      color:
+        type: string
+      owner:
+        type: string
+      created:
+        type: string
+      modified:
+        type: number
+  RetrospectiveEvent:
+    properties:
+      id:
+        type: string
+      when:
+        type: string
+      score:
+        type: number
+      description:
+        type: string
+      owner:
+        type: string
+      created:
+        type: string
+      modified:
+        type: number
+  Experiment:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      visionStatement:
+        type: string
+      hypothesis:
+        type: array
+        items:
+          $ref: "#/definitions/Hypothesis"
+      growthModel:
+        type: array
+        items:
+          $ref: "#/definitions/GrowthDriver"
+      status:
+        type: string
+      businessModelRef:
+        $ref: "#/definitions/CanvasReference"
+      serviceImpactRef:
+        $ref: "#/definitions/CanvasReference"
+      owner:
+        type: string
+      userName:
+        type: string
+      created:
+        type: string
+      modified:
+        type: number
+      private:
+        type: number
+  CanvasReference:
+    properties:
+      href:
+        type: string
+      id:
+        type: string
+  Hypothesis:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      validationCriteria:
+        type: string
+      status:
+        type: string
+      owner:
+        type: string
+      created:
+        type: string
+      modified:
+        type: string
+  GrowthDriver:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      engines:
+        type: array
+        items:
+          type: string
+      target:
+        type: string
+      unit:
+        type: string
+      status:
+        type: string
+      owner:
+        type: string
+      created:
+        type: string
+      modified:
+        type: string
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
