@@ -8,5 +8,10 @@
     "url": "https://raw.githubusercontent.com/experimenz/service-impact-canvas-api/master/api/swagger/swagger.yaml",
     "key": "ServiceImpactCanvas API",
     "title": "Management of services impact canvases"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/DigiGlu/digiglu-api-directory/master/swagger/experiment-api.yaml",
+    "key": "Experiment API",
+    "title": "Management of experiments"
   }
 ]
