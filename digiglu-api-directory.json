@@ -2,16 +2,16 @@
   {
     "url": "https://raw.githubusercontent.com/experimenz/business-model-canvas-api/master/api/swagger/swagger.yaml",
     "key": "BusinessModelCanvas API",
-    "title": "Management of business model canvases"
+    "title": "Business Model Canvases"
   },
   {
     "url": "https://raw.githubusercontent.com/experimenz/service-impact-canvas-api/master/api/swagger/swagger.yaml",
     "key": "ServiceImpactCanvas API",
-    "title": "Management of services impact canvases"
+    "title": "Services Impact Canvases"
   },
   {
     "url": "https://raw.githubusercontent.com/DigiGlu/digiglu-api-directory/master/swagger/experiment-api.yaml",
-    "key": "Experiment API",
-    "title": "Management of experiments"
+    "key": "Experiments API",
+    "title": "Experiments"
   }
 ]
