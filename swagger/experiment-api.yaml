@@ -632,9 +632,40 @@ paths:
         default:
           description: Error
           schema:
-            $ref: "#/definitions/TeamMember"
+            $ref: "#/definitions/ErrorResponse"
   /experiment/{id}/behaviour:
     x-swagger-router-controller: behaviour
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new behaviour
+      tags:
+        - behaviour
+      operationId: behaviourCreate
+      parameters:
+        - name: behaviour
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Behaviour"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/Behaviour"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
     get:
       security:
         - Bearer: []
@@ -695,6 +726,37 @@ paths:
             type: array
             items:
               $ref: "#/definitions/Role"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new role
+      tags:
+        - role
+      operationId: roleCreate
+      parameters:
+        - name: role
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Role"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/Role"
         "403":
           description: "Access Denied"
           schema:
