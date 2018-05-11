@@ -295,8 +295,6 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-  /swagger:
-    x-swagger-pipe: swagger_raw
   /experiment/{id}/retroEvent:
     x-swagger-router-controller: retroEvent
     post:
@@ -351,6 +349,76 @@ paths:
             type: array
             items:
               $ref: "#/definitions/RetrospectiveEvent"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/retroEvent/{eventId}:
+    x-swagger-router-controller: retroEvent
+    patch:
+      security:
+        - Bearer: []
+      description: Updates a restospective event
+      operationId: retroUpdate
+      parameters:
+        - name: retroEvent
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/RetrospectiveEvent"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: eventId
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: "#/definitions/RetrospectiveEvent"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    get:
+      security:
+        - Bearer: []
+      description: Returns a single retrospective event
+      operationId: retroGet
+      parameters:
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: eventId
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/RetrospectiveEvent"
         "403":
           description: "Access Denied"
           schema:
@@ -421,6 +489,44 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/member/{memberId}:
+    x-swagger-router-controller: teamMember
+    post:
+      security:
+        - Bearer: []
+      description: Updates a team member
+      operationId: memberUpdate
+      parameters:
+        - name: teamMember
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/TeamMember"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: memberId
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/TeamMember"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/TeamMember"
+  /swagger:
+    x-swagger-pipe: swagger_raw
 definitions:
   TeamMember:
     properties:
@@ -441,6 +547,12 @@ definitions:
   RetrospectiveEvent:
     properties:
       id:
+        type: string
+      memberId:
+        type: string
+      status:
+        type: string
+      behaviour:
         type: string
       when:
         type: string
