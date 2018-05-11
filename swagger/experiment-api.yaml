@@ -24,6 +24,8 @@ paths:
       security:
         - Bearer: []
       description: Creates a new experiment
+      tags:
+        - experiment
       operationId: experimentCreate
       parameters:
         - name: experiment
@@ -48,6 +50,8 @@ paths:
       security:
         - Bearer: []
       description: Returns an array of experiments
+      tags:
+        - experiment
       operationId: experimentFind
       parameters:
         - name: fields
@@ -81,6 +85,8 @@ paths:
       security:
         - Bearer: []
       description: Creates a new experiment
+      tags:
+        - experiment
       operationId: experimentUpdate
       parameters:
         - name: id
@@ -110,6 +116,8 @@ paths:
       security:
         - Bearer: []
       description: Returns one experiment
+      tags:
+        - experiment
       operationId: experimentGet
       parameters:
         - name: id
@@ -141,6 +149,9 @@ paths:
       security:
         - Bearer: []
       description: Creates a new BMC reference
+      tags:
+        - experiment
+        - BMC
       operationId: bmcRefCreate
       parameters:
         - name: bmcRef
@@ -172,6 +183,9 @@ paths:
       security:
         - Bearer: []
       description: Creates a new SIC reference
+      tags:
+        - experiment
+        - SIC
       operationId: sicRefCreate
       parameters:
         - name: sicRef
@@ -203,6 +217,8 @@ paths:
       security:
         - Bearer: []
       description: Creates a new business Hypothesis
+      tags:
+        - experiment
       operationId: hypoCreate
       parameters:
         - name: hypothesis
@@ -234,6 +250,8 @@ paths:
       security:
         - Bearer: []
       description: Updates a business Hypothesis
+      tags:
+        - experiment
       operationId: hypoUpdate
       parameters:
         - name: hypothesis
@@ -270,6 +288,8 @@ paths:
       security:
         - Bearer: []
       description: Creates a new growth Driver
+      tags:
+        - experiment
       operationId: driverCreate
       parameters:
         - name: driver
@@ -301,6 +321,8 @@ paths:
       security:
         - Bearer: []
       description: Creates a new restospective event
+      tags:
+        - retroEvent
       operationId: retroCreate
       parameters:
         - name: retroEvent
@@ -330,6 +352,8 @@ paths:
       security:
         - Bearer: []
       description: Returns an array of retrospective events
+      tags:
+        - retroEvent
       operationId: retroFind
       parameters:
         - name: fields
@@ -363,6 +387,8 @@ paths:
       security:
         - Bearer: []
       description: Updates a restospective event
+      tags:
+        - retroEvent
       operationId: retroUpdate
       parameters:
         - name: retroEvent
@@ -397,6 +423,8 @@ paths:
       security:
         - Bearer: []
       description: Returns a single retrospective event
+      tags:
+        - retroEvent
       operationId: retroGet
       parameters:
         - name: fields
@@ -433,6 +461,8 @@ paths:
       security:
         - Bearer: []
       description: Creates a new team member
+      tags:
+        - teamMember
       operationId: memberCreate
       parameters:
         - name: teamMember
@@ -462,6 +492,8 @@ paths:
       security:
         - Bearer: []
       description: Returns an array of team members
+      tags:
+        - teamMember
       operationId: memberFind
       parameters:
         - name: fields
@@ -491,10 +523,12 @@ paths:
             $ref: "#/definitions/ErrorResponse"
   /experiment/{id}/member/{memberId}:
     x-swagger-router-controller: teamMember
-    post:
+    patch:
       security:
         - Bearer: []
       description: Updates a team member
+      tags:
+        - teamMember
       operationId: memberUpdate
       parameters:
         - name: teamMember
