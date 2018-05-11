@@ -381,7 +381,7 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-  /retroEvent/{eventId}:
+  /experiment/{id}/retroEvent/{eventId}:
     x-swagger-router-controller: retroEvent
     patch:
       security:
@@ -396,6 +396,11 @@ paths:
           required: true
           schema:
             $ref: "#/definitions/RetrospectiveEvent"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
         - name: eventId
           in: path
           required: true
@@ -425,6 +430,11 @@ paths:
         - name: fields
           in: query
           required: false
+          description: ''
+          type: string
+        - name: id
+          in: path
+          required: true
           description: ''
           type: string
         - name: eventId
