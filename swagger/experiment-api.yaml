@@ -633,9 +633,105 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/TeamMember"
+  /experiment/{id}/behaviour:
+    x-swagger-router-controller: behaviour
+    get:
+      security:
+        - Bearer: []
+      description: Returns an array of behaviours
+      tags:
+        - behaviour
+      operationId: behaviourFind
+      parameters:
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Behaviour"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/role:
+    x-swagger-router-controller: role
+    get:
+      security:
+        - Bearer: []
+      description: Returns an array of roles
+      tags:
+        - role
+      operationId: roleFind
+      parameters:
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Role"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 definitions:
+  Behaviour:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+  Role:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      behaviourRef:
+        type: array
+          items:
+          $ref: "#/definitions/BehaviourRef"
+  BehaviourRef:
+      properties:
+        id:
+          type: string
+        weight:
+          type: number
   TeamMember:
     properties:
       id:
@@ -695,9 +791,13 @@ definitions:
       status:
         type: string
       businessModelRef:
-        $ref: "#/definitions/CanvasReference"
+        type: array
+        items:
+          $ref: "#/definitions/CanvasReference"
       serviceImpactRef:
-        $ref: "#/definitions/CanvasReference"
+        type: array
+        items:
+          $ref: "#/definitions/CanvasReference"
       owner:
         type: string
       userName:
