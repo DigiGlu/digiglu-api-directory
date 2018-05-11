@@ -724,7 +724,7 @@ definitions:
         type: string
       behaviourRef:
         type: array
-          items:
+        items:
           $ref: "#/definitions/BehaviourRef"
   BehaviourRef:
       properties:
