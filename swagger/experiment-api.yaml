@@ -315,6 +315,44 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+  /experiment/{id}/retroEventBulk:
+    x-swagger-router-controller: retroEvent
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new restospective event
+      tags:
+        - bulk
+        - retroEvent
+      operationId: retroBulkCreate
+      parameters:
+        - name: retroEvent
+          in: body
+          required: true
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/RetrospectiveEvent"
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "201":
+          description: Created
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/RetrospectiveEvent"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /experiment/{id}/retroEvent:
     x-swagger-router-controller: retroEvent
     post:
@@ -523,6 +561,42 @@ paths:
             $ref: "#/definitions/ErrorResponse"
   /experiment/{id}/member/{memberId}:
     x-swagger-router-controller: teamMember
+    get:
+      security:
+        - Bearer: []
+      description: Get a single team member
+      tags:
+        - teamMember
+      operationId: memberGet
+      parameters:
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+        - name: id
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: memberId
+          in: path
+          required: true
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/TeamMember"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/TeamMember"
     patch:
       security:
         - Bearer: []
