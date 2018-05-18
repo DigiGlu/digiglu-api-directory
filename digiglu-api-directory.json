@@ -16,7 +16,7 @@
   },
   {
     "url": "https://raw.githubusercontent.com/DigiGlu/digiglu-api-directory/master/swagger/user-api.yaml",
-    "key": "UsersRolesPermissions API
+    "key": "UsersRolesPermissions API",
     "title": "Users, Roles and Permissions"
   }
 ]
