@@ -18,6 +18,165 @@ consumes:
 produces:
   - application/json
 paths:
+  /organisation:
+    x-swagger-router-controller: organisation
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new organisation
+      tags:
+        - organisation
+      operationId: organisationCreate
+      parameters:
+        - name: organisation
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Organisation"
+      responses:
+        '201':
+          description: "Created"
+          schema:
+            $ref: "#/definitions/Organisation"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    get:
+      security:
+        - Bearer: []
+      description: Returns an array of organisations
+      tags:
+        - organisation
+      operationId: organisationFind
+      parameters:
+        - description: To obtain the list of organisations with an specific type
+          in: query
+          name: type
+          required: false
+          type: string
+        - description: To obtain the list of organisations owned by an specific user
+          in: query
+          name: owner
+          required: false
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: List of organisations provided
+          schema:
+            items:
+              $ref: "#/definitions/Organisation"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /organisation/{organisationId}:
+    x-swagger-router-controller: organisation
+    patch:
+      security:
+        - Bearer: []
+      description: updates an organisation
+      tags:
+        - organisation
+      operationId: organisationUpdate
+      parameters:
+        - name: organisationId
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: organisation
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Organisation"
+      responses:
+        "200":
+          description: Update successful
+          schema:
+            $ref: "#/definitions/Organisation"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    get:
+      security:
+        - Bearer: []
+      description: Returns one single organisation
+      tags:
+        - organisation
+      operationId: organisationGet
+      parameters:
+        - name: organisationId
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/Organisation"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /organisation/{organisationId}/member:
+    x-swagger-router-controller: organisation
+    post:
+      security:
+        - Bearer: []
+      description: Assigns a user as member of an organisation
+      tags:
+        - organisation
+      operationId: organisationAddMember
+      parameters:
+        - name: organisationId
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: userRef
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/UserRef"
+      responses:
+        "200":
+          description: Assigment successful
+          schema:
+            $ref: "#/definitions/UserRef"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /user:
     x-swagger-router-controller: user
     post:
@@ -89,7 +248,7 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-  /user/{id}:
+  /user/{userId}:
     x-swagger-router-controller: user
     patch:
       security:
@@ -99,7 +258,7 @@ paths:
         - user
       operationId: userUpdate
       parameters:
-        - name: id
+        - name: userId
           in: path
           required: true
           description: ''
@@ -130,7 +289,7 @@ paths:
         - user
       operationId: userGet
       parameters:
-        - name: id
+        - name: userId
           in: path
           required: true
           description: ''
@@ -361,22 +520,166 @@ paths:
       summary: Retrieve user role resource
       tags:
         - userroles
+  '/rolespec':
+    get:
+      operationId: retrieveRolesSpec
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: List of roles specifications provided
+          schema:
+            items:
+              $ref: '#/definitions/UserRoleSpecType'
+            type: array
+          headers:
+            X-Total-Count:
+              description: Total results
+              type: integer
+      summary: Retrieve list of user role specifications
+      tags:
+        - userrolespec
+    post:
+      consumes:
+        - application/json
+      operationId: createUserRoleSpec
+      parameters:
+        - description: The information required to create a user role specification resource
+          in: body
+          name: userrolespecCreate
+          required: true
+          schema:
+            $ref: '#/definitions/UserRoleSpecCreateType'
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: User Role Specification registered in server
+          headers:
+            Location:
+              type: string
+          schema:
+            $ref: '#/definitions/UserRoleSpecType'
+      summary: Create new user role
+      tags:
+        - userroles
+  '/rolespec/{roleSpecId}':
+    get:
+      operationId: retrieveUserRoleSpec
+      parameters:
+        - description: The id of the user role specification to retrieve
+          in: path
+          name: roleSpecId
+          required: true
+          type: string
+        - description: To obtain a subset of the resource data in the response
+          in: query
+          name: fields
+          required: false
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User role specification information provided
+          schema:
+            $ref: '#/definitions/UserRoleSpecType'
+      tags:
+        - userroles
+  /behaviour:
+    x-swagger-router-controller: behaviour
+    post:
+      security:
+        - Bearer: []
+      description: Creates a new behaviour specification
+      tags:
+        - behaviour
+      operationId: behaviourCreate
+      parameters:
+        - name: behaviour
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/BehaviourSpecType"
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: "#/definitions/BehaviourSpecType"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    get:
+      security:
+        - Bearer: []
+      description: Returns an array of behaviour specifications
+      tags:
+        - behaviour
+      operationId: behaviourFind
+      parameters:
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/BehaviourSpecType"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 tags:
   - name: permissions
   - name: userroles
 definitions:
+  Organisation:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      memberRef:
+        type: array
+        items:
+          $ref: "#/definitions/UserRef"
+  UserRef:
+    properties:
+      id:
+        type: string
+      href:
+        type: string
+      joined:
+        type: string
+      role:
+        type: array
+        items:
+          $ref: "#/definitions/UserRoleType"
   User:
     properties:
       id:
         type: string
       name:
         type: string
+      nickName:
+        type: string
       pictureURL:
         type: string
-      role:
-        type: array
-        items:
-          $ref: "#/definitions/UserRoleType"
       apiKey:
         type: array
         items:
@@ -444,12 +747,22 @@ definitions:
       - action
   EntitlementType:
     properties:
+      entitlementSpecId:
+        type: string
+      managementEntityId:
+        type: string
+    required:
+      - entitlementSpecId
+  EntitlementSpecType:
+    properties:
       function:
         type: string
       action:
         type: string
+      managedEntityType:
+        type: string
     required:
-      - action
+      - function
   UserRoleRefReqType:
     properties:
       id:
@@ -541,6 +854,23 @@ definitions:
       - date
       - period
       - user
+  UserRoleSpecCreateType:
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      entitlementSpec:
+        items:
+          $ref: '#/definitions/EntitlementSpecType'
+        type: array
+      behaviourSpec:
+        description: EXTENSION TO TMF API
+        items:
+          $ref: '#/definitions/BehaviourSpecType'
+        type: array
+    required:
+      - name
   UserRoleCreateType:
     properties:
       involvementRole:
@@ -558,6 +888,8 @@ definitions:
         type: string
       href:
         type: string
+      roleSpecId:
+        type: string
       involvementRole:
         type: string
       entitlement:
@@ -569,6 +901,36 @@ definitions:
       - href
       - involvementRole
       - entitlement
+  UserRoleSpecType:
+    properties:
+      id:
+        type: string
+      href:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      entitlementSpec:
+        items:
+          $ref: '#/definitions/EntitlementSpecType'
+        type: array
+      behaviourSpec:
+        description: EXTENSION TO TMF API
+        items:
+          $ref: '#/definitions/BehaviourSpecType'
+        type: array
+    required:
+      - id
+      - href
+  BehaviourSpecType:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
   ErrorResponse:
     required:
       - message
