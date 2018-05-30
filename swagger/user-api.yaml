@@ -562,7 +562,7 @@ paths:
             $ref: '#/definitions/UserRoleSpecType'
       summary: Create new user role
       tags:
-        - userroles
+        - userrolespec
   '/rolespec/{roleSpecId}':
     get:
       operationId: retrieveUserRoleSpec
@@ -585,7 +585,7 @@ paths:
           schema:
             $ref: '#/definitions/UserRoleSpecType'
       tags:
-        - userroles
+        - userrolespec
   /behaviour:
     x-swagger-router-controller: behaviour
     post:
