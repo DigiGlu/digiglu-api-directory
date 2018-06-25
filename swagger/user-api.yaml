@@ -678,12 +678,28 @@ definitions:
         type: string
       nickName:
         type: string
+      orgRef:
+        type: array
+        items:
+          $ref: "#/definitions/OrgRef"
       pictureURL:
         type: string
       apiKey:
         type: array
         items:
           $ref: "#/definitions/ApiKey"
+  OrgRef:
+    properties:
+      id:
+        type: string
+      href:
+        type: string
+      joined:
+        type: string
+      role:
+        type: array
+        items:
+          $ref: "#/definitions/UserRoleType"
   ApiKey:
     properties:
       service:
