@@ -146,6 +146,45 @@ paths:
             $ref: "#/definitions/ErrorResponse"
   /organisation/{organisationId}/member:
     x-swagger-router-controller: organisation
+    get:
+      security:
+        - Bearer: []
+      description: Returns an array of Users (members) of an organisation
+      tags:
+        - user
+      operationId: memberFind
+      parameters:
+        - name: organisationId
+          in: path
+          required: true
+          description: ''
+          type: string
+        - name: fields
+          in: query
+          required: false
+          description: ''
+          type: string
+        - description: To obtain the list of users with an specific role
+          in: query
+          name: role
+          required: false
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: List of users provided
+          schema:
+            items:
+              $ref: "#/definitions/User"
+        "403":
+          description: "Access Denied"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
     post:
       security:
         - Bearer: []
@@ -521,6 +560,7 @@ paths:
       tags:
         - userroles
   '/rolespec':
+    x-swagger-router-controller: rolespec
     get:
       operationId: retrieveRolesSpec
       produces:
@@ -564,6 +604,7 @@ paths:
       tags:
         - userrolespec
   '/rolespec/{roleSpecId}':
+    x-swagger-router-controller: rolespec
     get:
       operationId: retrieveUserRoleSpec
       parameters:
@@ -654,7 +695,7 @@ definitions:
         type: string
       type:
         type: string
-      memberRef:
+      userRef:
         type: array
         items:
           $ref: "#/definitions/UserRef"
@@ -771,6 +812,8 @@ definitions:
       - entitlementSpecId
   EntitlementSpecType:
     properties:
+      id:
+        type: string
       function:
         type: string
       action:
