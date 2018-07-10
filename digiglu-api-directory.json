@@ -18,5 +18,10 @@
     "url": "https://raw.githubusercontent.com/DigiGlu/digiglu-api-directory/master/swagger/user-api.yaml",
     "key": "UsersRolesPermissions API",
     "title": "Users, Roles and Permissions"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/DigiGlu/api-api/master/api/swagger/swagger.yaml",
+    "key": "API API",
+    "title": "Collections, APIs and Schemas"
   }
 ]
