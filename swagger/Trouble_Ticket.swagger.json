@@ -1,0 +1,372 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Trouble Ticket",
+        "description": "This is Swagger UI environment generated for the TMF Trouble Ticket specification",
+        "version": "2.0"
+    },
+    "host": "serverRoot",
+    "basePath": "/tmf-api/troubleTicket/v2/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/troubleTicket": {
+            "get": {
+                "operationId": "listTroubleTicket",
+                "summary": "List or find 'TroubleTicket' objects",
+                "tags": [
+                    "troubleTicket"
+                ],
+                "parameters": [
+                  {
+                      "type": "string",
+                      "required": false,
+                      "in": "query",
+                      "name": "fields",
+                      "description": "Comma separated properties to display in response"
+                  },
+                  {
+                      "type": "integer",
+                      "required": false,
+                      "in": "query",
+                      "name": "offset",
+                      "description": "Requested index for start of resources to be provided in response"
+                  },
+                  {
+                      "type": "integer",
+                      "required": false,
+                      "in": "query",
+                      "name": "limit",
+                      "description": "Requested number of resources to be provided in response"
+                  }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "items": {
+                              "$ref": "https://api.experimenz.com/v1/oas/schema/trouble-ticket-instance/1-0-0"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/400-response/1-0-0"
+                    },
+                    "401": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/401-response/1-0-0"
+                    },
+                    "403": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/403-response/1-0-0"
+                    },
+                    "404": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/404-response/1-0-0"
+                    },
+                    "405": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/405-response/1-0-0"
+                    },
+                    "409": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/409-response/1-0-0"
+                    },
+                    "500": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/500-response/1-0-0"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createTroubleTicket",
+                "summary": "Creates a 'TroubleTicket'",
+                "tags": [
+                    "troubleTicket"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                          "$ref": "https://api.experimenz.com/v1/oas/schema/trouble-ticket-instance-create/1-0-0"
+                        },
+                        "required": true,
+                        "in": "body",
+                        "name": "troubleTicket",
+                        "description": "The Trouble Ticket to be created"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                          "$ref": "https://api.experimenz.com/v1/oas/schema/trouble-ticket-instance/1-0-0"
+                        }
+                    },
+                    "400": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/400-response/1-0-0"
+                    },
+                    "401": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/401-response/1-0-0"
+                    },
+                    "403": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/403-response/1-0-0"
+                    },
+                    "404": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/404-response/1-0-0"
+                    },
+                    "405": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/405-response/1-0-0"
+                    },
+                    "409": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/409-response/1-0-0"
+                    },
+                    "500": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/500-response/1-0-0"
+                    }
+                }
+            }
+        },
+        "/troubleTicket/{id}": {
+            "get": {
+                "operationId": "retrieveTroubleTicket",
+                "summary": "Retrieves a 'TroubleTicket' by Id",
+                "tags": [
+                    "troubleTicket"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "type": "string",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Identifier of the Trouble Ticket"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "items": {
+                              "$ref": "https://api.experimenz.com/v1/oas/schema/trouble-ticket-instance/1-0-0"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/400-response/1-0-0"
+                    },
+                    "401": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/401-response/1-0-0"
+                    },
+                    "403": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/403-response/1-0-0"
+                    },
+                    "404": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/404-response/1-0-0"
+                    },
+                    "405": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/405-response/1-0-0"
+                    },
+                    "409": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/409-response/1-0-0"
+                    },
+                    "500": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/500-response/1-0-0"
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "patchTroubleTicket",
+                "summary": "Updates partially a 'TroubleTicket' by Id",
+                "tags": [
+                    "troubleTicket"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "type": "string",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Identifier of the Trouble Ticket"
+                    },
+                    {
+                        "schema": {
+                          "$ref": "https://api.experimenz.com/v1/oas/schema/trouble-ticket-instance-update/1-0-0"
+                        },
+                        "required": true,
+                        "in": "body",
+                        "name": "troubleTicket",
+                        "description": "The Trouble Ticket to be updated"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated",
+                        "schema": {
+                          "$ref": "https://api.experimenz.com/v1/oas/schema/trouble-ticket-instance/1-0-0"
+                        }
+                    },
+                    "400": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/400-response/1-0-0"
+                    },
+                    "401": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/401-response/1-0-0"
+                    },
+                    "403": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/403-response/1-0-0"
+                    },
+                    "404": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/404-response/1-0-0"
+                    },
+                    "405": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/405-response/1-0-0"
+                    },
+                    "409": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/409-response/1-0-0"
+                    },
+                    "500": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/500-response/1-0-0"
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deleteTroubleTicket",
+                "summary": "Deletes a 'TroubleTicket' by Id",
+                "tags": [
+                    "troubleTicket"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "type": "string",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Identifier of the Trouble Ticket"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/400-response/1-0-0"
+                    },
+                    "401": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/401-response/1-0-0"
+                    },
+                    "403": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/403-response/1-0-0"
+                    },
+                    "404": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/404-response/1-0-0"
+                    },
+                    "405": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/405-response/1-0-0"
+                    },
+                    "409": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/409-response/1-0-0"
+                    },
+                    "500": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/500-response/1-0-0"
+                    }
+                }
+            }
+        },
+        "/hub": {
+            "post": {
+                "operationId": "registerListener",
+                "summary": "Register a listener",
+                "description": "Sets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "schema": {
+                          "$ref": "https://api.experimenz.com/v1/oas/schema/event-subscription-instance-create/1-0-0"                        },
+                        "required": true,
+                        "in": "body",
+                        "description": "Data containing the callback endpoint to deliver the information"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Subscribed",
+                        "schema": {
+                          "$ref": "https://api.experimenz.com/v1/oas/schema/event-subscription-instance/1-0-0"
+                        }
+                    },
+                    "400": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/400-response/1-0-0"
+                    },
+                    "401": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/401-response/1-0-0"
+                    },
+                    "403": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/403-response/1-0-0"
+                    },
+                    "404": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/404-response/1-0-0"
+                    },
+                    "405": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/405-response/1-0-0"
+                    },
+                    "409": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/409-response/1-0-0"
+                    },
+                    "500": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/500-response/1-0-0"
+                    }
+                }
+            }
+        },
+        "/hub/{id}": {
+            "delete": {
+                "operationId": "unregisterListener",
+                "summary": "Unregister a listener",
+                "description": "Resets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "description": "The id of the registered listener"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/400-response/1-0-0"
+                    },
+                    "401": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/401-response/1-0-0"
+                    },
+                    "403": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/403-response/1-0-0"
+                    },
+                    "404": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/404-response/1-0-0"
+                    },
+                    "405": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/405-response/1-0-0"
+                    },
+                    "409": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/409-response/1-0-0"
+                    },
+                    "500": {
+                      "$ref": "https://api.experimenz.com/v1/oas/schema/500-response/1-0-0"
+                    }
+                }
+            }
+        }
+    }
+}
