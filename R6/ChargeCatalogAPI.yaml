@@ -1,0 +1,2212 @@
+swagger: '2.0'
+info:
+  title: Infonova API Swagger
+  version: 8.2.5
+host: 'go.infonova.com:9700'
+basePath: /r6-api
+schemes:
+  - https
+paths:
+  '/{tenant}/chargeCatalog/v1/allowanceThresholdActions':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: GET /chargeCatalog/v1/allowanceThresholdActions
+      description: GET /chargeCatalog/v1/allowanceThresholdActions
+      operationId: getChargeCatalogV1AllowanceThresholdActions
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdActionList'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    put:
+      tags:
+        - Charge Catalog v1
+      summary: PUT /chargeCatalog/v1/allowanceThresholdActions
+      description: PUT /chargeCatalog/v1/allowanceThresholdActions
+      operationId: putChargeCatalogV1AllowanceThresholdActions
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdActions'
+      responses:
+        '204':
+          description: Successful response
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    post:
+      tags:
+        - Charge Catalog v1
+      summary: POST /chargeCatalog/v1/allowanceThresholdActions
+      description: POST /chargeCatalog/v1/allowanceThresholdActions
+      operationId: postChargeCatalogV1AllowanceThresholdActions
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/allowanceThresholdActions/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/allowanceThresholdActions/{name}'
+      description: 'GET /chargeCatalog/v1/allowanceThresholdActions/{name}'
+      operationId: getChargeCatalogV1AllowanceThresholdActionsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    put:
+      tags:
+        - Charge Catalog v1
+      summary: 'PUT /chargeCatalog/v1/allowanceThresholdActions/{name}'
+      description: 'PUT /chargeCatalog/v1/allowanceThresholdActions/{name}'
+      operationId: putChargeCatalogV1AllowanceThresholdActionsName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    patch:
+      tags:
+        - Charge Catalog v1
+      summary: 'PATCH /chargeCatalog/v1/allowanceThresholdActions/{name}'
+      description: 'PATCH /chargeCatalog/v1/allowanceThresholdActions/{name}'
+      operationId: patchChargeCatalogV1AllowanceThresholdActionsName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/allowances/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/allowances/{name}'
+      description: 'GET /chargeCatalog/v1/allowances/{name}'
+      operationId: getChargeCatalogV1AllowancesName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationAllowance'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/billTypeGroups':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: GET /chargeCatalog/v1/billTypeGroups
+      description: GET /chargeCatalog/v1/billTypeGroups
+      operationId: getChargeCatalogV1BillTypeGroups
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroupList'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    post:
+      tags:
+        - Charge Catalog v1
+      summary: POST /chargeCatalog/v1/billTypeGroups
+      description: POST /chargeCatalog/v1/billTypeGroups
+      operationId: postChargeCatalogV1BillTypeGroups
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroup'
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/billTypeGroups/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/billTypeGroups/{name}'
+      description: 'GET /chargeCatalog/v1/billTypeGroups/{name}'
+      operationId: getChargeCatalogV1BillTypeGroupsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    put:
+      tags:
+        - Charge Catalog v1
+      summary: 'PUT /chargeCatalog/v1/billTypeGroups/{name}'
+      description: 'PUT /chargeCatalog/v1/billTypeGroups/{name}'
+      operationId: putChargeCatalogV1BillTypeGroupsName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroup'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    patch:
+      tags:
+        - Charge Catalog v1
+      summary: 'PATCH /chargeCatalog/v1/billTypeGroups/{name}'
+      description: 'PATCH /chargeCatalog/v1/billTypeGroups/{name}'
+      operationId: patchChargeCatalogV1BillTypeGroupsName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroup'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups'
+      description: 'GET /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups'
+      operationId: getChargeCatalogV1BillTypeGroupsNameRelatedBillTypeGroups
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroupList'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    post:
+      tags:
+        - Charge Catalog v1
+      summary: 'POST /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups'
+      description: 'POST /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups'
+      operationId: postChargeCatalogV1BillTypeGroupsNameRelatedBillTypeGroups
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups/{relatedName}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups/{relatedName}'
+      description: 'GET /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups/{relatedName}'
+      operationId: getChargeCatalogV1BillTypeGroupsNameRelatedBillTypeGroupsRelatedName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: relatedName
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    put:
+      tags:
+        - Charge Catalog v1
+      summary: 'PUT /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups/{relatedName}'
+      description: 'PUT /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups/{relatedName}'
+      operationId: putChargeCatalogV1BillTypeGroupsNameRelatedBillTypeGroupsRelatedName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: relatedName
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    patch:
+      tags:
+        - Charge Catalog v1
+      summary: 'PATCH /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups/{relatedName}'
+      description: 'PATCH /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypeGroups/{relatedName}'
+      operationId: patchChargeCatalogV1BillTypeGroupsNameRelatedBillTypeGroupsRelatedName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: relatedName
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes'
+      description: 'GET /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes'
+      operationId: getChargeCatalogV1BillTypeGroupsNameRelatedBillTypes
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeList'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    post:
+      tags:
+        - Charge Catalog v1
+      summary: 'POST /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes'
+      description: 'POST /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes'
+      operationId: postChargeCatalogV1BillTypeGroupsNameRelatedBillTypes
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes/{relatedName}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes/{relatedName}'
+      description: 'GET /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes/{relatedName}'
+      operationId: getChargeCatalogV1BillTypeGroupsNameRelatedBillTypesRelatedName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: relatedName
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    put:
+      tags:
+        - Charge Catalog v1
+      summary: 'PUT /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes/{relatedName}'
+      description: 'PUT /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes/{relatedName}'
+      operationId: putChargeCatalogV1BillTypeGroupsNameRelatedBillTypesRelatedName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: relatedName
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    patch:
+      tags:
+        - Charge Catalog v1
+      summary: 'PATCH /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes/{relatedName}'
+      description: 'PATCH /chargeCatalog/v1/billTypeGroups/{name}/relatedBillTypes/{relatedName}'
+      operationId: patchChargeCatalogV1BillTypeGroupsNameRelatedBillTypesRelatedName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: relatedName
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/billTypes/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/billTypes/{name}'
+      description: 'GET /chargeCatalog/v1/billTypes/{name}'
+      operationId: getChargeCatalogV1BillTypesName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainBillType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/chargeSpecifications/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/chargeSpecifications/{name}'
+      description: 'GET /chargeCatalog/v1/chargeSpecifications/{name}'
+      operationId: getChargeCatalogV1ChargeSpecificationsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecification'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/discounts/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/discounts/{name}'
+      description: 'GET /chargeCatalog/v1/discounts/{name}'
+      operationId: getChargeCatalogV1DiscountsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationDiscount'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/funds/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/funds/{name}'
+      description: 'GET /chargeCatalog/v1/funds/{name}'
+      operationId: getChargeCatalogV1FundsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationFund'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/instalmentCharges/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/instalmentCharges/{name}'
+      description: 'GET /chargeCatalog/v1/instalmentCharges/{name}'
+      operationId: getChargeCatalogV1InstalmentChargesName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationInstalmentCharge'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/onceOnlyCharges/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/onceOnlyCharges/{name}'
+      description: 'GET /chargeCatalog/v1/onceOnlyCharges/{name}'
+      operationId: getChargeCatalogV1OnceOnlyChargesName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationOnceOnlyCharge'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/recurringCharges/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/recurringCharges/{name}'
+      description: 'GET /chargeCatalog/v1/recurringCharges/{name}'
+      operationId: getChargeCatalogV1RecurringChargesName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationRecurringCharge'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/taxTypes':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: GET /chargeCatalog/v1/taxTypes
+      description: GET /chargeCatalog/v1/taxTypes
+      operationId: getChargeCatalogV1TaxTypes
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxTypeList'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    put:
+      tags:
+        - Charge Catalog v1
+      summary: PUT /chargeCatalog/v1/taxTypes
+      description: PUT /chargeCatalog/v1/taxTypes
+      operationId: putChargeCatalogV1TaxTypes
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxTypes'
+      responses:
+        '204':
+          description: Successful response
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    post:
+      tags:
+        - Charge Catalog v1
+      summary: POST /chargeCatalog/v1/taxTypes
+      description: POST /chargeCatalog/v1/taxTypes
+      operationId: postChargeCatalogV1TaxTypes
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/taxTypes/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/taxTypes/{name}'
+      description: 'GET /chargeCatalog/v1/taxTypes/{name}'
+      operationId: getChargeCatalogV1TaxTypesName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    put:
+      tags:
+        - Charge Catalog v1
+      summary: 'PUT /chargeCatalog/v1/taxTypes/{name}'
+      description: 'PUT /chargeCatalog/v1/taxTypes/{name}'
+      operationId: putChargeCatalogV1TaxTypesName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    patch:
+      tags:
+        - Charge Catalog v1
+      summary: 'PATCH /chargeCatalog/v1/taxTypes/{name}'
+      description: 'PATCH /chargeCatalog/v1/taxTypes/{name}'
+      operationId: patchChargeCatalogV1TaxTypesName
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/terminationCharges/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/terminationCharges/{name}'
+      description: 'GET /chargeCatalog/v1/terminationCharges/{name}'
+      operationId: getChargeCatalogV1TerminationChargesName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationTerminationCharge'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/chargeCatalog/v1/usageCharges/{name}':
+    get:
+      tags:
+        - Charge Catalog v1
+      summary: 'GET /chargeCatalog/v1/usageCharges/{name}'
+      description: 'GET /chargeCatalog/v1/usageCharges/{name}'
+      operationId: getChargeCatalogV1UsageChargesName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationUsageCharge'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+definitions:
+  ChargespecificationsV1DomainAllowanceThresholdAction:
+    type: object
+    properties:
+      active:
+        type: boolean
+      description:
+        type: string
+      displayName:
+        type: string
+      displayOrder:
+        type: integer
+        format: int32
+      name:
+        type: string
+  ChargespecificationsV1DomainAllowanceThresholdActionList:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+      paginationInformation:
+        type: object
+        properties:
+          pageSize:
+            type: integer
+          totalNumberOfRecords:
+            type: integer
+  ChargespecificationsV1DomainAllowanceThresholdActions:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainAllowanceThresholdAction'
+  ChargespecificationsV1DomainBillType:
+    type: object
+    properties:
+      billText:
+        type: string
+      description:
+        type: string
+      generalLedgerCode:
+        type: string
+      invoiceTransferPriority:
+        type: integer
+        format: int64
+      measuringUnit:
+        type: string
+      name:
+        type: string
+      productCode:
+        type: string
+      timeLineItems:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainBillTypeTimeLineItem'
+  ChargespecificationsV1DomainBillTypeGroup:
+    type: object
+    properties:
+      description:
+        type: string
+      measuringUnit:
+        type: string
+      name:
+        type: string
+      relatedBillTypeGroups:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+      relatedBillTypes:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+  ChargespecificationsV1DomainBillTypeGroupList:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainBillTypeGroup'
+      paginationInformation:
+        type: object
+        properties:
+          pageSize:
+            type: integer
+          totalNumberOfRecords:
+            type: integer
+  ChargespecificationsV1DomainBillTypeTimeLineItem:
+    type: object
+    properties:
+      loyaltyPointsDisabled:
+        type: boolean
+      taxType:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainChargeSpecification:
+    type: object
+    properties:
+      charges:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationCharge'
+      currency:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      prepaid:
+        type: boolean
+      priority:
+        type: integer
+        format: int64
+      type:
+        type: string
+  ChargespecificationsV1DomainChargeSpecificationAllowance:
+    type: object
+    properties:
+      allowanceThresholds:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationAllowanceThreshold'
+      amount:
+        type: string
+        format: number
+      amountAdjustmentAllowed:
+        type: boolean
+      amountOverridable:
+        type: boolean
+      billTypeGroup:
+        type: string
+      carryOverMonths:
+        type: integer
+        format: int32
+      description:
+        type: string
+      dynamic:
+        type: boolean
+      limit:
+        type: boolean
+      measuringUnit:
+        type: string
+      name:
+        type: string
+      priority:
+        type: integer
+        format: int32
+      ratingEngine:
+        type: string
+      shareable:
+        type: boolean
+      sharedWithSubAccounts:
+        type: boolean
+      sharingAllowed:
+        type: boolean
+      tiered:
+        type: boolean
+      type:
+        type: string
+      weeklyTimeTableProfileReferences:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainWeeklyTimeTableProfileReference'
+  ChargespecificationsV1DomainChargeSpecificationAllowanceThreshold:
+    type: object
+    properties:
+      action:
+        type: string
+      fireIfLast:
+        type: boolean
+      thresholdPercentage:
+        type: number
+        format: double
+      tiering:
+        $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationAllowanceThresholdRecurringTieringReference'
+  ChargespecificationsV1DomainChargeSpecificationAllowanceThresholdRecurringTieringReference:
+    type: object
+    properties:
+      recurringCharge:
+        type: string
+      tieringLevel:
+        type: string
+  ChargespecificationsV1DomainChargeSpecificationCharge:
+    type: object
+    properties:
+      allowance:
+        type: string
+      billType:
+        type: string
+      discount:
+        type: string
+      fund:
+        type: string
+      instalmentCharge:
+        type: string
+      onceOnlyCharge:
+        type: string
+      recurringCharge:
+        type: string
+      terminationCharge:
+        type: string
+      usageCharge:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainChargeSpecificationDiscount:
+    type: object
+    properties:
+      amountAdjustmentAllowed:
+        type: boolean
+      billTextAdjustmentAllowed:
+        type: boolean
+      billingAccountAssignmentAllowed:
+        type: boolean
+      description:
+        type: string
+      frequencyMonths:
+        type: integer
+        format: int32
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationDiscountItem'
+      name:
+        type: string
+      prorated:
+        type: boolean
+      prorationCondition:
+        type: string
+      prorationMode:
+        type: string
+      sourceScopeValueType:
+        type: string
+      type:
+        type: string
+      validityPeriod:
+        type: string
+        format: period
+  ChargespecificationsV1DomainChargeSpecificationDiscountItem:
+    type: object
+    properties:
+      sourceScopes:
+        type: array
+        items:
+          type: string
+      targetScopes:
+        type: array
+        items:
+          type: string
+      tiering:
+        $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationTiering'
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainChargeSpecificationFund:
+    type: object
+    properties:
+      amount:
+        type: string
+        format: number
+      amountAdjustmentAllowed:
+        type: boolean
+      displayName:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+  ChargespecificationsV1DomainChargeSpecificationInstalmentCharge:
+    type: object
+    properties:
+      amountAdjustmentAllowed:
+        type: boolean
+      billTextAdjustmentAllowed:
+        type: boolean
+      billingAccountAssignmentAllowed:
+        type: boolean
+      charges:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationInstalmentChargeItem'
+      description:
+        type: string
+      frequencyMonths:
+        type: integer
+        format: int32
+      name:
+        type: string
+      payRemainderOnTermination:
+        type: boolean
+  ChargespecificationsV1DomainChargeSpecificationInstalmentChargeItem:
+    type: object
+    properties:
+      charge:
+        type: string
+        format: number
+      numberOfInitialPayments:
+        type: integer
+        format: int32
+      numberOfPayments:
+        type: integer
+        format: int32
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainChargeSpecificationOnceOnlyCharge:
+    type: object
+    properties:
+      amountAdjustmentAllowed:
+        type: boolean
+      billTextAdjustmentAllowed:
+        type: boolean
+      billingAccountAssignmentAllowed:
+        type: boolean
+      charges:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationOnceOnlyChargeItem'
+      description:
+        type: string
+      loyaltyPointsRedemptionAllowed:
+        type: boolean
+      name:
+        type: string
+      overridingCharge:
+        type: string
+  ChargespecificationsV1DomainChargeSpecificationOnceOnlyChargeItem:
+    type: object
+    properties:
+      charge:
+        type: string
+        format: number
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainChargeSpecificationRecurringCharge:
+    type: object
+    properties:
+      amountAdjustmentAllowed:
+        type: boolean
+      billTextAdjustmentAllowed:
+        type: boolean
+      billingAccountAssignmentAllowed:
+        type: boolean
+      chargeInAdvanceMonths:
+        type: integer
+        format: int32
+      charges:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationRecurringChargeItem'
+      description:
+        type: string
+      frequencyMonths:
+        type: integer
+        format: int32
+      name:
+        type: string
+      prorated:
+        type: boolean
+      prorationCondition:
+        type: string
+      prorationMode:
+        type: string
+  ChargespecificationsV1DomainChargeSpecificationRecurringChargeItem:
+    type: object
+    properties:
+      charge:
+        type: string
+        format: number
+      tiering:
+        $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationTiering'
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainChargeSpecificationTerminationCharge:
+    type: object
+    properties:
+      bindingMonths:
+        type: integer
+        format: int32
+      fixedCharge:
+        type: string
+        format: number
+      gracePeriodMonths:
+        type: integer
+        format: int32
+      name:
+        type: string
+      tieringLevels:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationTieringLevel'
+  ChargespecificationsV1DomainChargeSpecificationTiering:
+    type: object
+    properties:
+      incremental:
+        type: boolean
+      tieringLevels:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationTieringLevel'
+  ChargespecificationsV1DomainChargeSpecificationTieringLevel:
+    type: object
+    properties:
+      name:
+        type: string
+      unitsMax:
+        type: integer
+        format: int64
+      unitsMin:
+        type: integer
+        format: int64
+      value:
+        type: string
+        format: number
+  ChargespecificationsV1DomainChargeSpecificationUsageCharge:
+    type: object
+    properties:
+      amountAdjustmentAllowed:
+        type: boolean
+      billType:
+        type: string
+      description:
+        type: string
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationUsageChargeItem'
+      measuringUnit:
+        type: string
+      name:
+        type: string
+      ratingEngine:
+        type: string
+      ratingFunction:
+        type: string
+  ChargespecificationsV1DomainChargeSpecificationUsageChargeItem:
+    type: object
+    properties:
+      profiles:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationUsageChargeProfile'
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      weeklyTimeTable:
+        type: string
+  ChargespecificationsV1DomainChargeSpecificationUsageChargeProfile:
+    type: object
+    properties:
+      calculationMode:
+        type: string
+      segments:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainChargeSpecificationUsageChargeSegment'
+      stepInterval:
+        type: integer
+        format: int64
+      validityPeriod:
+        type: string
+        format: period
+      weeklyTimeTableProfileName:
+        type: string
+  ChargespecificationsV1DomainChargeSpecificationUsageChargeSegment:
+    type: object
+    properties:
+      basicCharge:
+        type: string
+        format: number
+      chargePerUnit:
+        type: string
+        format: number
+      connectionCharge:
+        type: string
+        format: number
+      unitsMax:
+        type: integer
+        format: int64
+      unitsMin:
+        type: integer
+        format: int64
+  ChargespecificationsV1DomainRelatedBillType:
+    type: object
+    properties:
+      _links:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/CommonsDomainModelLink'
+      name:
+        type: string
+      relatedName:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainRelatedBillTypeGroup:
+    type: object
+    properties:
+      _links:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/CommonsDomainModelLink'
+      name:
+        type: string
+      relatedName:
+        type: string
+      state:
+        type: string
+      type:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainRelatedBillTypeGroupList:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillTypeGroup'
+      paginationInformation:
+        type: object
+        properties:
+          pageSize:
+            type: integer
+          totalNumberOfRecords:
+            type: integer
+  ChargespecificationsV1DomainRelatedBillTypeList:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainRelatedBillType'
+      paginationInformation:
+        type: object
+        properties:
+          pageSize:
+            type: integer
+          totalNumberOfRecords:
+            type: integer
+  ChargespecificationsV1DomainTaxType:
+    type: object
+    properties:
+      description:
+        type: string
+      displayOrder:
+        type: integer
+        format: int32
+      name:
+        type: string
+      rates:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainTaxTypeRate'
+  ChargespecificationsV1DomainTaxTypeList:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+      paginationInformation:
+        type: object
+        properties:
+          pageSize:
+            type: integer
+          totalNumberOfRecords:
+            type: integer
+  ChargespecificationsV1DomainTaxTypeRate:
+    type: object
+    properties:
+      rate:
+        type: string
+        format: number
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ChargespecificationsV1DomainTaxTypes:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ChargespecificationsV1DomainTaxType'
+  ChargespecificationsV1DomainWeeklyTimeTableProfileReference:
+    type: object
+    properties:
+      weeklyTimeTable:
+        type: string
+      weeklyTimeTableProfile:
+        type: string
+  CommonsDomainModelArgument:
+    type: object
+    properties:
+      argument:
+        type: string
+      argumentDescription:
+        type: string
+      argumentKey:
+        type: string
+      subMessages:
+        type: array
+        items:
+          $ref: '#/definitions/CommonsDomainModelMessage'
+  CommonsDomainModelLink:
+    type: object
+    properties:
+      href:
+        type: string
+      templated:
+        type: boolean
+  CommonsDomainModelMessage:
+    type: object
+    properties:
+      args:
+        type: array
+        items:
+          $ref: '#/definitions/CommonsDomainModelArgument'
+      key:
+        type: string
+      message:
+        type: string
+      messageTemplate:
+        type: string
+  CommonsDomainModelMessageAware:
+    type: object
+    properties:
+      logId:
+        type: string
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/CommonsDomainModelMessage'
+  CommonsTimeInterval:
+    type: object
+    properties:
+      end:
+        type: string
+        format: date-time
+      start:
+        type: string
+        format: date-time
+securityDefinitions:
+  oauth2ClientCredentialAuthentication:
+    type: oauth2
+    description: Client credentials flow configuration for the Infonova Keycloak.
+    flow: application
+    tokenUrl: 'https://go.infonova.com/auth/realms/R6/protocol/openid-connect/token'
+  oauth2ResourceOwnerPasswordCredentialAuthentication:
+    type: oauth2
+    description: Resource Owner Password Credentials flow configuration for the Infonova Keycloak.
+    flow: password
+    tokenUrl: 'https://go.infonova.com/auth/realms/R6/protocol/openid-connect/token'
+tags:
+  - name: Charge Catalog v1
+    externalDocs:
+      description: Further documentation
+      url: 'http://go.infonova.com:9700/r6-api/docs/charge-specification-impl/index.html'

@@ -1,0 +1,1182 @@
+swagger: '2.0'
+info:
+  title: Infonova API Swagger
+  version: 8.2.5
+host: 'go.infonova.com:9700'
+basePath: /r6-api
+schemes:
+  - https
+paths:
+  '/{tenant}/productCatalog/v1/channels':
+    put:
+      tags:
+        - Product Catalog v1
+      summary: PUT /productCatalog/v1/channels
+      description: PUT /productCatalog/v1/channels
+      operationId: putProductCatalogV1Channels
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOfferingChannelAssignments'
+      responses:
+        '204':
+          description: Successful response
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/channels/{channel}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/channels/{channel}'
+      description: 'GET /productCatalog/v1/channels/{channel}'
+      operationId: getProductCatalogV1ChannelsChannel
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: channel
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOfferingChannelAssignmentList'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/productOfferingCharacteristicGroups/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/productOfferingCharacteristicGroups/{name}'
+      description: 'GET /productCatalog/v1/productOfferingCharacteristicGroups/{name}'
+      operationId: getProductCatalogV1ProductOfferingCharacteristicGroupsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOfferingCharacteristicGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/productOfferingGroups/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/productOfferingGroups/{name}'
+      description: 'GET /productCatalog/v1/productOfferingGroups/{name}'
+      operationId: getProductCatalogV1ProductOfferingGroupsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOfferingGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/productOfferingTariffModels/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/productOfferingTariffModels/{name}'
+      description: 'GET /productCatalog/v1/productOfferingTariffModels/{name}'
+      operationId: getProductCatalogV1ProductOfferingTariffModelsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOfferingTariffModel'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/productOfferings':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: GET /productCatalog/v1/productOfferings
+      description: GET /productCatalog/v1/productOfferings
+      operationId: getProductCatalogV1ProductOfferings
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOfferingList'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/productOfferings/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/productOfferings/{name}'
+      description: 'GET /productCatalog/v1/productOfferings/{name}'
+      operationId: getProductCatalogV1ProductOfferingsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOffering'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/productOfferings/{productOffering}/channels':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/productOfferings/{productOffering}/channels'
+      description: 'GET /productCatalog/v1/productOfferings/{productOffering}/channels'
+      operationId: getProductCatalogV1ProductOfferingsProductOfferingChannels
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: productOffering
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOfferingChannelAssignmentList'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+    put:
+      tags:
+        - Product Catalog v1
+      summary: 'PUT /productCatalog/v1/productOfferings/{productOffering}/channels'
+      description: 'PUT /productCatalog/v1/productOfferings/{productOffering}/channels'
+      operationId: putProductCatalogV1ProductOfferingsProductOfferingChannels
+      consumes:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: productOffering
+          in: path
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainProductOfferingChannelAssignments'
+      responses:
+        '204':
+          description: Successful response
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/productOfferings/{productOffering}/channels/{channel}':
+    delete:
+      tags:
+        - Product Catalog v1
+      summary: 'DELETE /productCatalog/v1/productOfferings/{productOffering}/channels/{channel}'
+      description: 'DELETE /productCatalog/v1/productOfferings/{productOffering}/channels/{channel}'
+      operationId: deleteProductCatalogV1ProductOfferingsProductOfferingChannelsChannel
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: productOffering
+          in: path
+          required: true
+          type: string
+        - name: channel
+          in: path
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Successful response
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/resourceSpecificationGroupTariffModels/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/resourceSpecificationGroupTariffModels/{name}'
+      description: 'GET /productCatalog/v1/resourceSpecificationGroupTariffModels/{name}'
+      operationId: getProductCatalogV1ResourceSpecificationGroupTariffModelsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainResourceSpecificationGroupTariffModel'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/resourceSpecificationGroups/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/resourceSpecificationGroups/{name}'
+      description: 'GET /productCatalog/v1/resourceSpecificationGroups/{name}'
+      operationId: getProductCatalogV1ResourceSpecificationGroupsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainResourceSpecificationGroup'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/rules/customerTypeRestriction/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/rules/customerTypeRestriction/{name}'
+      description: 'GET /productCatalog/v1/rules/customerTypeRestriction/{name}'
+      operationId: getProductCatalogV1RulesCustomerTypeRestrictionName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainCustomerTypeRestrictionRule'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/rules/numberOfSameProductOfferings/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/rules/numberOfSameProductOfferings/{name}'
+      description: 'GET /productCatalog/v1/rules/numberOfSameProductOfferings/{name}'
+      operationId: getProductCatalogV1RulesNumberOfSameProductOfferingsName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainNumberOfSameProductOfferingsRule'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/rules/script/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/rules/script/{name}'
+      description: 'GET /productCatalog/v1/rules/script/{name}'
+      operationId: getProductCatalogV1RulesScriptName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainScriptRule'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+  '/{tenant}/productCatalog/v1/rules/upDowngradeProductOffering/{name}':
+    get:
+      tags:
+        - Product Catalog v1
+      summary: 'GET /productCatalog/v1/rules/upDowngradeProductOffering/{name}'
+      description: 'GET /productCatalog/v1/rules/upDowngradeProductOffering/{name}'
+      operationId: getProductCatalogV1RulesUpDowngradeProductOfferingName
+      produces:
+        - application/json
+        - application/vnd.infonova.r6+json
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          type: string
+        - name: name
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ProductofferingV1DomainUpDowngradeProductOfferingRule'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '422':
+          description: Validation error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/CommonsDomainModelMessageAware'
+      security:
+        - oauth2ClientCredentialAuthentication: []
+        - oauth2ResourceOwnerPasswordCredentialAuthentication: []
+definitions:
+  CommonsDomainModelArgument:
+    type: object
+    properties:
+      argument:
+        type: string
+      argumentDescription:
+        type: string
+      argumentKey:
+        type: string
+      subMessages:
+        type: array
+        items:
+          $ref: '#/definitions/CommonsDomainModelMessage'
+  CommonsDomainModelConfigurationAttribute:
+    type: object
+    properties:
+      displayName:
+        type: string
+      name:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      value:
+        type: string
+  CommonsDomainModelLink:
+    type: object
+    properties:
+      href:
+        type: string
+      templated:
+        type: boolean
+  CommonsDomainModelMessage:
+    type: object
+    properties:
+      args:
+        type: array
+        items:
+          $ref: '#/definitions/CommonsDomainModelArgument'
+      key:
+        type: string
+      message:
+        type: string
+      messageTemplate:
+        type: string
+  CommonsDomainModelMessageAware:
+    type: object
+    properties:
+      logId:
+        type: string
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/CommonsDomainModelMessage'
+  CommonsTimeInterval:
+    type: object
+    properties:
+      end:
+        type: string
+        format: date-time
+      start:
+        type: string
+        format: date-time
+  PartyV1DomainRelatedParty:
+    type: object
+    properties:
+      _links:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/CommonsDomainModelLink'
+      id:
+        type: string
+      name:
+        type: string
+      role:
+        type: string
+      type:
+        type: string
+  ProductofferingV1DomainCustomerTypeRestrictionRule:
+    type: object
+    properties:
+      customerType:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainNumberOfSameProductOfferingsRule:
+    type: object
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      numberOfSameProductOfferings:
+        type: integer
+        format: int32
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainProductOffering:
+    type: object
+    properties:
+      billText:
+        type: string
+      bundle:
+        type: boolean
+      configurationAttributes:
+        type: array
+        items:
+          $ref: '#/definitions/CommonsDomainModelConfigurationAttribute'
+      dependencies:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOfferingDependency'
+      description:
+        type: string
+      internalName:
+        type: string
+      name:
+        type: string
+      productCode:
+        type: string
+      productOfferingParameterSet:
+        $ref: '#/definitions/ProductofferingV1DomainProductOfferingParameterSet'
+      productOfferingRuleReferences:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOfferingRuleReference'
+      relatedParties:
+        type: array
+        items:
+          $ref: '#/definitions/PartyV1DomainRelatedParty'
+      state:
+        type: string
+      tariffModel:
+        type: string
+      template:
+        type: string
+      termsAndConditions:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      wholesale:
+        type: boolean
+  ProductofferingV1DomainProductOfferingChannelAssignment:
+    type: object
+    properties:
+      channel:
+        type: string
+      productOffering:
+        type: string
+  ProductofferingV1DomainProductOfferingChannelAssignmentList:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOfferingChannelAssignment'
+      paginationInformation:
+        type: object
+        properties:
+          pageSize:
+            type: integer
+          totalNumberOfRecords:
+            type: integer
+  ProductofferingV1DomainProductOfferingChannelAssignments:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOfferingChannelAssignment'
+  ProductofferingV1DomainProductOfferingCharacteristic:
+    type: object
+    properties:
+      changeable:
+        type: boolean
+      configurationAttributes:
+        type: array
+        items:
+          $ref: '#/definitions/CommonsDomainModelConfigurationAttribute'
+      defaultActive:
+        type: boolean
+      description:
+        type: string
+      displayName:
+        type: string
+      mandatory:
+        type: boolean
+      name:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainProductOfferingCharacteristicGroup:
+    type: object
+    properties:
+      description:
+        type: string
+      displayName:
+        type: string
+      name:
+        type: string
+      productOfferingCharacteristics:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOfferingCharacteristic'
+      single:
+        type: boolean
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainProductOfferingCharacteristicTariff:
+    type: object
+    properties:
+      chargeSpecification:
+        type: string
+      parentChargeSpecification:
+        type: string
+      productOfferingCharacteristic:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      validityPeriod:
+        type: string
+        format: period
+  ProductofferingV1DomainProductOfferingDependency:
+    type: object
+    properties:
+      dependencyType:
+        type: string
+      inherited:
+        type: boolean
+      source:
+        type: string
+      sourceInverted:
+        type: boolean
+      sourceType:
+        type: string
+      state:
+        type: string
+      target:
+        type: string
+      targetType:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainProductOfferingGroup:
+    type: object
+    properties:
+      description:
+        type: string
+      displayName:
+        type: string
+      name:
+        type: string
+      productOfferingReferences:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOfferingGroupMember'
+  ProductofferingV1DomainProductOfferingGroupMember:
+    type: object
+    properties:
+      default:
+        type: boolean
+      productOffering:
+        type: string
+  ProductofferingV1DomainProductOfferingList:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOffering'
+      paginationInformation:
+        type: object
+        properties:
+          pageSize:
+            type: integer
+          totalNumberOfRecords:
+            type: integer
+  ProductofferingV1DomainProductOfferingParameterDefinition:
+    type: object
+    properties:
+      displayName:
+        type: string
+      hidden:
+        type: boolean
+      name:
+        type: string
+      required:
+        type: boolean
+      searchable:
+        type: boolean
+      transient:
+        type: boolean
+      validationRegex:
+        type: string
+  ProductofferingV1DomainProductOfferingParameterSet:
+    type: object
+    properties:
+      productOfferingParameterDefinitions:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOfferingParameterDefinition'
+      strictValidation:
+        type: boolean
+  ProductofferingV1DomainProductOfferingRuleReference:
+    type: object
+    properties:
+      rule:
+        type: string
+      ruleType:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainProductOfferingTariffModel:
+    type: object
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      productOfferingCharacteristicTariffs:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainProductOfferingCharacteristicTariff'
+      resourceSpecificationGroupTariffs:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainResourceSpecificationGroupTariff'
+      serviceSpecificationCharacteristicTariffs:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainServiceSpecificationCharacteristicTariff'
+      serviceSpecificationCharacteristicValueTariffs:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainServiceSpecificationCharacteristicValueTariff'
+      serviceSpecificationTariffs:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainServiceSpecificationTariff'
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainResourceSpecificationGroup:
+    type: object
+    properties:
+      description:
+        type: string
+      displayName:
+        type: string
+      name:
+        type: string
+      resourceSpecificationReferences:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainResourceSpecificationReference'
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainResourceSpecificationGroupTariff:
+    type: object
+    properties:
+      resourceSpecificationGroup:
+        type: string
+      resourceSpecificationGroupTariffModel:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      validityPeriod:
+        type: string
+        format: period
+  ProductofferingV1DomainResourceSpecificationGroupTariffModel:
+    type: object
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      resourceSpecificationTariffs:
+        type: array
+        items:
+          $ref: '#/definitions/ProductofferingV1DomainResourceSpecificationTariff'
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainResourceSpecificationReference:
+    type: object
+    properties:
+      default:
+        type: boolean
+      displayOrder:
+        type: integer
+        format: int32
+      resourceProvider:
+        type: string
+      resourceSpecification:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      wholesaleProductOffering:
+        type: string
+      wholesaleProvider:
+        type: string
+  ProductofferingV1DomainResourceSpecificationTariff:
+    type: object
+    properties:
+      chargeSpecification:
+        type: string
+      resourceProvider:
+        type: string
+      resourceSpecification:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      wholesaleProductOffering:
+        type: string
+      wholesaleProvider:
+        type: string
+  ProductofferingV1DomainScriptRule:
+    type: object
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      scriptName:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+  ProductofferingV1DomainServiceSpecificationCharacteristicTariff:
+    type: object
+    properties:
+      chargeSpecification:
+        type: string
+      parentChargeSpecification:
+        type: string
+      serviceProvider:
+        type: string
+      serviceSpecification:
+        type: string
+      serviceSpecificationCharacteristic:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      validityPeriod:
+        type: string
+        format: period
+  ProductofferingV1DomainServiceSpecificationCharacteristicValueTariff:
+    type: object
+    properties:
+      chargeSpecification:
+        type: string
+      parentChargeSpecification:
+        type: string
+      serviceProvider:
+        type: string
+      serviceSpecification:
+        type: string
+      serviceSpecificationCharacteristic:
+        type: string
+      serviceSpecificationCharacteristicValue:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      validityPeriod:
+        type: string
+        format: period
+  ProductofferingV1DomainServiceSpecificationTariff:
+    type: object
+    properties:
+      chargeSpecification:
+        type: string
+      parentChargeSpecification:
+        type: string
+      serviceProvider:
+        type: string
+      serviceSpecification:
+        type: string
+      state:
+        type: string
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+      validityPeriod:
+        type: string
+        format: period
+  ProductofferingV1DomainUpDowngradeProductOfferingRule:
+    type: object
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      productOffering:
+        type: string
+      state:
+        type: string
+      terminationChargeHandling:
+        type: string
+      terminationChargeTaxExcludedAmount:
+        type: string
+        format: number
+      upDowngradeFeeName:
+        type: string
+      upgrade:
+        type: boolean
+      validFor:
+        $ref: '#/definitions/CommonsTimeInterval'
+securityDefinitions:
+  oauth2ClientCredentialAuthentication:
+    type: oauth2
+    description: Client credentials flow configuration for the Infonova Keycloak.
+    flow: application
+    tokenUrl: 'https://go.infonova.com/auth/realms/R6/protocol/openid-connect/token'
+  oauth2ResourceOwnerPasswordCredentialAuthentication:
+    type: oauth2
+    description: Resource Owner Password Credentials flow configuration for the Infonova Keycloak.
+    flow: password
+    tokenUrl: 'https://go.infonova.com/auth/realms/R6/protocol/openid-connect/token'
+tags:
+  - name: Product Catalog v1
+    externalDocs:
+      description: Further documentation
+      url: 'http://go.infonova.com:9700/r6-api/docs/product-offering-impl/index.html'
