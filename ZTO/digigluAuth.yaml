@@ -1,0 +1,77 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Infonova R6 authentication API
+host: localhost:5000
+basePath: /api/v1/auth
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /login:
+    x-swagger-router-controller: login
+    post:
+      description: Obtains a bearer token from Infonova R6
+      operationId: obtainToken
+      parameters:
+        - name: loginCredentials
+          in: body
+          description: The name of the person to whom to say hello
+          required: true
+          schema:
+            $ref: '#/definitions/Credentials'
+      responses:
+        "201":
+          description: Success
+          schema:
+            $ref: "#/definitions/AccessToken"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+definitions:
+  Credentials:
+    required:
+      - userName
+      - password
+    properties:
+      userName:
+        type: string
+      password:
+        type: string
+  AccessToken:
+    required:
+      - access_token
+    properties:
+      access_token:
+        type: string
+      expires_in:
+        type: number
+      refresh_expires_in:
+        type: number
+      refresh_token:
+        type: string
+      token_type:
+        type: string
+      not_before_policy:
+        type: number
+      session_state:
+        type: string
+      scope:
+        type: string
+      name:
+        type: string
+      email:
+        type: string
+  ErrorResponse:
+    required:
+      - status
+    properties:
+      statusText:
+        type: string
+      status:
+        type: number
