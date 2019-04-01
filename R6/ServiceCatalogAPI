@@ -1,0 +1,843 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Infonova API Swagger",
+    "version": "8.2.6"
+  },
+  "host": "go.infonova.com:9700",
+  "basePath": "/r6-api",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/{tenant}/serviceCatalog/v1/mediationFeeds": {
+      "get": {
+        "tags": [
+          "Service Catalog v1"
+        ],
+        "summary": "GET /serviceCatalog/v1/mediationFeeds",
+        "description": "GET /serviceCatalog/v1/mediationFeeds",
+        "operationId": "getServiceCatalogV1MediationFeeds",
+        "produces": [
+          "application/json",
+          "application/vnd.infonova.r6+json"
+        ],
+        "parameters": [
+          {
+            "name": "tenant",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ServicespecificationV1DomainMediationFeedList"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2ClientCredentialAuthentication": [
+              
+            ]
+          },
+          {
+            "oauth2ResourceOwnerPasswordCredentialAuthentication": [
+              
+            ]
+          }
+        ]
+      }
+    },
+    "/{tenant}/serviceCatalog/v1/mediationFeeds/{name}": {
+      "get": {
+        "tags": [
+          "Service Catalog v1"
+        ],
+        "summary": "GET /serviceCatalog/v1/mediationFeeds/{name}",
+        "description": "GET /serviceCatalog/v1/mediationFeeds/{name}",
+        "operationId": "getServiceCatalogV1MediationFeedsName",
+        "produces": [
+          "application/json",
+          "application/vnd.infonova.r6+json"
+        ],
+        "parameters": [
+          {
+            "name": "tenant",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ServicespecificationV1DomainMediationFeed"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2ClientCredentialAuthentication": [
+              
+            ]
+          },
+          {
+            "oauth2ResourceOwnerPasswordCredentialAuthentication": [
+              
+            ]
+          }
+        ]
+      }
+    },
+    "/{tenant}/serviceCatalog/v1/serviceSpecifications": {
+      "get": {
+        "tags": [
+          "Service Catalog v1"
+        ],
+        "summary": "GET /serviceCatalog/v1/serviceSpecifications",
+        "description": "GET /serviceCatalog/v1/serviceSpecifications",
+        "operationId": "getServiceCatalogV1ServiceSpecifications",
+        "produces": [
+          "application/json",
+          "application/vnd.infonova.r6+json"
+        ],
+        "parameters": [
+          {
+            "name": "tenant",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecificationList"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2ClientCredentialAuthentication": [
+              
+            ]
+          },
+          {
+            "oauth2ResourceOwnerPasswordCredentialAuthentication": [
+              
+            ]
+          }
+        ]
+      }
+    },
+    "/{tenant}/serviceCatalog/v1/serviceSpecifications/{name}": {
+      "get": {
+        "tags": [
+          "Service Catalog v1"
+        ],
+        "summary": "GET /serviceCatalog/v1/serviceSpecifications/{name}",
+        "description": "GET /serviceCatalog/v1/serviceSpecifications/{name}",
+        "operationId": "getServiceCatalogV1ServiceSpecificationsName",
+        "produces": [
+          "application/json",
+          "application/vnd.infonova.r6+json"
+        ],
+        "parameters": [
+          {
+            "name": "tenant",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecification"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/CommonsDomainModelMessageAware"
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2ClientCredentialAuthentication": [
+              
+            ]
+          },
+          {
+            "oauth2ResourceOwnerPasswordCredentialAuthentication": [
+              
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "CapabilitiesV1DomainProvidedCapability": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CapabilitiesV1DomainProvidedCapabilityProperty"
+          }
+        }
+      }
+    },
+    "CapabilitiesV1DomainProvidedCapabilityProperty": {
+      "type": "object",
+      "properties": {
+        "characteristicName": {
+          "type": "string"
+        },
+        "configurationAttributeName": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CapabilitiesV1DomainRequiredCapability": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "exclusive": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CapabilitiesV1DomainRequiredCapabilityProperty"
+          }
+        },
+        "requiredToStartProvisioning": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CapabilitiesV1DomainRequiredCapabilityProperty": {
+      "type": "object",
+      "properties": {
+        "characteristicName": {
+          "type": "string"
+        },
+        "constraintType": {
+          "type": "string"
+        },
+        "constraintValue": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CommonsDomainModelArgument": {
+      "type": "object",
+      "properties": {
+        "argument": {
+          "type": "string"
+        },
+        "argumentDescription": {
+          "type": "string"
+        },
+        "argumentKey": {
+          "type": "string"
+        },
+        "subMessages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommonsDomainModelMessage"
+          }
+        }
+      }
+    },
+    "CommonsDomainModelConfigurationAttribute": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/CommonsTimeInterval"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "CommonsDomainModelLink": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "templated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CommonsDomainModelMessage": {
+      "type": "object",
+      "properties": {
+        "args": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommonsDomainModelArgument"
+          }
+        },
+        "key": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "messageTemplate": {
+          "type": "string"
+        }
+      }
+    },
+    "CommonsDomainModelMessageAware": {
+      "type": "object",
+      "properties": {
+        "logId": {
+          "type": "string"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommonsDomainModelMessage"
+          }
+        }
+      }
+    },
+    "CommonsTimeInterval": {
+      "type": "object",
+      "properties": {
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "PartyV1DomainRelatedParty": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/CommonsDomainModelLink"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "ServicespecificationV1DomainMediationEvent": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "ServicespecificationV1DomainMediationFeed": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "mediationEvents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainMediationEvent"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        }
+      }
+    },
+    "ServicespecificationV1DomainMediationFeedList": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainMediationFeed"
+          }
+        },
+        "paginationInformation": {
+          "type": "object",
+          "properties": {
+            "pageSize": {
+              "type": "integer"
+            },
+            "totalNumberOfRecords": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "ServicespecificationV1DomainMediationFeedReference": {
+      "type": "object",
+      "properties": {
+        "mediationFeed": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/CommonsTimeInterval"
+        }
+      }
+    },
+    "ServicespecificationV1DomainServiceSpecification": {
+      "type": "object",
+      "properties": {
+        "configurationAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommonsDomainModelConfigurationAttribute"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "mediationFeedReferences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainMediationFeedReference"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "providedCapabilities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CapabilitiesV1DomainProvidedCapability"
+          }
+        },
+        "relatedParties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PartyV1DomainRelatedParty"
+          }
+        },
+        "requiredCapabilities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CapabilitiesV1DomainRequiredCapability"
+          }
+        },
+        "serviceProvider": {
+          "type": "string"
+        },
+        "serviceSpecificationActions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecificationAction"
+          }
+        },
+        "serviceSpecificationCharacteristics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecificationCharacteristic"
+          }
+        },
+        "serviceSpecificationParameterSet": {
+          "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecificationParameterSet"
+        },
+        "serviceSpecificationRelationships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecificationRelationship"
+          }
+        },
+        "state": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/CommonsTimeInterval"
+        }
+      }
+    },
+    "ServicespecificationV1DomainServiceSpecificationAction": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "resourcePath": {
+          "type": "string"
+        },
+        "targetSystem": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "ServicespecificationV1DomainServiceSpecificationCharacteristic": {
+      "type": "object",
+      "properties": {
+        "changeable": {
+          "type": "boolean"
+        },
+        "changeableDuringProvisioning": {
+          "type": "boolean"
+        },
+        "configurationAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommonsDomainModelConfigurationAttribute"
+          }
+        },
+        "defaultActive": {
+          "type": "boolean"
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "deliveryAddress": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "displayOrder": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "groupIdentifier": {
+          "type": "boolean"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "maxNumberOfInstances": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "searchable": {
+          "type": "boolean"
+        },
+        "serviceAddress": {
+          "type": "boolean"
+        },
+        "serviceIdentifier": {
+          "type": "boolean"
+        },
+        "serviceSpecificationCharacteristicValues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecificationCharacteristicValue"
+          }
+        },
+        "state": {
+          "type": "string"
+        },
+        "supportsConcurrentChanges": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/CommonsTimeInterval"
+        },
+        "valueChangeable": {
+          "type": "boolean"
+        },
+        "valueMandatory": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ServicespecificationV1DomainServiceSpecificationCharacteristicValue": {
+      "type": "object",
+      "properties": {
+        "configurationAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommonsDomainModelConfigurationAttribute"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "displayOrder": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "state": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/CommonsTimeInterval"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "ServicespecificationV1DomainServiceSpecificationList": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecification"
+          }
+        },
+        "paginationInformation": {
+          "type": "object",
+          "properties": {
+            "pageSize": {
+              "type": "integer"
+            },
+            "totalNumberOfRecords": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "ServicespecificationV1DomainServiceSpecificationParameterDefinition": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "validationRegex": {
+          "type": "string"
+        }
+      }
+    },
+    "ServicespecificationV1DomainServiceSpecificationParameterSet": {
+      "type": "object",
+      "properties": {
+        "serviceSpecificationParameterDefinitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServicespecificationV1DomainServiceSpecificationParameterDefinition"
+          }
+        },
+        "strictValidation": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ServicespecificationV1DomainServiceSpecificationRelationship": {
+      "type": "object",
+      "properties": {
+        "maxNumberOfInstances": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minNumberOfInstances": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "relatedName": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/CommonsTimeInterval"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "oauth2ClientCredentialAuthentication": {
+      "type": "oauth2",
+      "description": "Client credentials flow configuration for the Infonova Keycloak.",
+      "flow": "application",
+      "tokenUrl": "https://go.infonova.com/auth/realms/R6/protocol/openid-connect/token"
+    },
+    "oauth2ResourceOwnerPasswordCredentialAuthentication": {
+      "type": "oauth2",
+      "description": "Resource Owner Password Credentials flow configuration for the Infonova Keycloak.",
+      "flow": "password",
+      "tokenUrl": "https://go.infonova.com/auth/realms/R6/protocol/openid-connect/token"
+    }
+  },
+  "tags": [
+    {
+      "name": "Service Catalog v1",
+      "externalDocs": {
+        "description": "Further documentation",
+        "url": "http://go.infonova.com:9700/r6-api/docs/service-catalog.html"
+      }
+    }
+  ]
+}
